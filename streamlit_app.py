@@ -4,15 +4,6 @@ import numpy as np
 
 st.title('🎈 My First Streamlit App')
 
-# Generate some random data
-data = pd.DataFrame({
-    'x': range(1, 11),
-    'y': np.random.randn(10)
-})
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
-# Display the data as a table
-st.write("Here's our data:")
-st.dataframe(data)
-
-# Create a line chart
-st.line_chart(data)
+st.area_chart(chart_data)
